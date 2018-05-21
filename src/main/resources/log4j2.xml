@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+        <File name="migration_log_file" fileName="migration.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.springframework" level="DEBUG" additivity="false">
+            <AppenderRef ref="migration_log_file"/>
+        </Logger>
+        <Logger name="se.umu.its.kaltura.migration" level="DEBUG" additivity="false">
+            <AppenderRef ref="migration_log_file"/>
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="migration_log_file"/>
+        </Root>
+    </Loggers>
+</Configuration>

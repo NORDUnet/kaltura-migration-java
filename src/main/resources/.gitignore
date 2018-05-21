@@ -1,0 +1,6 @@
+*.csv
+*.txt
+*.log
+kaltura_migration.properties
+
+!README.txt

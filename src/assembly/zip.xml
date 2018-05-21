@@ -1,0 +1,29 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+    <id>app</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <files>
+        <file>
+            <source>src/main/resources/kaltura_migration-prod.properties</source>
+            <outputDirectory>\</outputDirectory>
+            <destName>kaltura_migration.properties</destName>
+        </file>
+        <file>
+            <source>src/main/resources/README.txt</source>
+            <outputDirectory>\</outputDirectory>
+            <destName>README.txt</destName>
+        </file>
+    </files>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>\</outputDirectory>
+            <includes>
+                <include>kaltura-migration.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
